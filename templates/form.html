@@ -3,20 +3,20 @@
 {% block form %}
 
 {% if session.get('from_flash') == True %}
-  <div class="alert alert-primary" role="alert">
-    <h2>Not a valid code: {{req_from[0]}} </h2>
+  <div class="alert alert-danger" role="alert">
+    Not a valid code: {{req_from[0]}}
   </div>
 {% endif %}
 
 {% if  session.get('to_flash') == True %}
-<div class="alert alert-primary" role="alert">
-  <h2>Not a valid code: {{req_to[0]}}</h2>
+<div class="alert alert-danger" role="alert">
+  Not a valid code: {{req_to[0]}}
 </div>
 {% endif %}
 
 {% if  session.get('amount_flash') == True %}
-<div class="alert alert-primary" role="alert">
-  <h2>Not a valid number: {{req_amt[0]}}</h2>
+<div class="alert alert-danger" role="alert">
+  Not a valid number: {{req_amt[0]}}
 </div>
 {% endif %}
 
