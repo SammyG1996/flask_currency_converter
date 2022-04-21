@@ -30,11 +30,6 @@ def application():
 @app.route('/checkform', methods = ['POST', 'GET'])
 def checkform():
 
-
-#    logic.req_from.insert(0, request.form['converting-from'])
-#    logic.req_to.insert(0, request.form['converting-to'])
-#    logic.req_amt.insert(0, request.form['amount'])
-
    logic.add_form_data(request.form['converting-from'], request.form['converting-to'], request.form['amount'])
 
    logic.check_form_session()

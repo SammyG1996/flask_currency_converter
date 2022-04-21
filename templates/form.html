@@ -3,27 +3,38 @@
 {% block form %}
 
 {% if session.get('from_flash') == True %}
-  <h2>Not a valid code: {{req_from[0]}} </h2>
+  <div class="alert alert-primary" role="alert">
+    <h2>Not a valid code: {{req_from[0]}} </h2>
+  </div>
 {% endif %}
 
 {% if  session.get('to_flash') == True %}
+<div class="alert alert-primary" role="alert">
   <h2>Not a valid code: {{req_to[0]}}</h2>
+</div>
 {% endif %}
 
 {% if  session.get('amount_flash') == True %}
+<div class="alert alert-primary" role="alert">
   <h2>Not a valid number: {{req_amt[0]}}</h2>
+</div>
 {% endif %}
 
-
-<form action="/checkform" method="POST">
-<label for="converting-from">Converting From:</label>
-  <input type="text" name="converting-from" id="converting-from">
-<label for="converting-to">Converting To:</label>
-  <input type="text" name="converting-to" id="converting-to">
-<label for="amount">Amount:</label>
-  <input type="text" name="amount" id="amount">
-<button type="submit">Convert!</button>
-</form>
+<div class="d-flex align-items-center flex-column">
+  <form action="/checkform" method="POST" class="row g-3">
+    <div class="col ">
+      <div class="d-flex justify-content-center flex-column">
+        <label for="converting-from" class="form-label">Converting From:</label>
+          <input type="text" name="converting-from" id="converting-from" class="form-control">
+        <label for="converting-to" class="form-label">Converting To:</label>
+          <input type="text" name="converting-to" id="converting-to" class="form-control">
+        <label for="amount" class="form-label">Amount:</label>
+          <input type="text" name="amount" id="amount" class="form-control">
+        <button type="submit" class="btn btn-primary mt-2">Convert!</button>
+      </div>
+    </div>
+  </form>
+</div>
 
 
 {% endblock %}

@@ -35,7 +35,7 @@ class Logic():
     if Logic.req_to[0] not in Logic.codes:
           session['to_flash'] = True
     else: session['to_flash'] = False
-
+    
     if not Logic.req_amt[0].isdigit():
           session['amount_flash'] = True 
     else: session['amount_flash'] = False
