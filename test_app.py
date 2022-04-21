@@ -11,5 +11,8 @@ class AppTestCase(TestCase):
     # This tests to see is the USD country code is in the list of country codes
     assert "USD" in app.codes
 
+  # class FlaskAppTestCase(TestCase): 
+  #   def 
+
   
 
