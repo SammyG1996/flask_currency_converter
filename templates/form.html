@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block form %}
+
+{% if session.get('from_flash') == True %}
+  <h2>Not a valid code: {{req_from[0]}} </h2>
+{% endif %}
+
+{% if  session.get('to_flash') == True %}
+  <h2>Not a valid code: {{req_to[0]}}</h2>
+{% endif %}
+
+{% if  session.get('amount_flash') == True %}
+  <h2>Not a valid code: {{req_amt[0]}}</h2>
+{% endif %}
+
+
+
+
+
+<form action="/checkform" method="POST">
+<label for="converting-from">Converting From:</label>
+  <input type="text" name="converting-from" id="converting-from">
+<label for="converting-to">Converting To:</label>
+  <input type="text" name="converting-to" id="converting-to">
+<label for="amount">Amount:</label>
+  <input type="text" name="amount" id="amount">
+<button type="submit">Convert!</button>
+</form>
+
+
+{% endblock %}
